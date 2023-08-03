@@ -1,13 +1,16 @@
 from fastapi import FastAPI, Response
 from df import obtener_generos, obtener_juegos, obtener_specs, obtener_early_access, obtener_sentiment, obtener_metascore
 
+
+
+
 app = FastAPI(title="Steam Games API",
               description="Proyecto individual 1",
               version="1.0.0")
 
 
 
-
+# Test request
 @app.get('/')
 async def root():
     return Response(content='<h2 style="text-align: center">Respuesta de Steam Games API exitosa</h2>', media_type='text/html')
