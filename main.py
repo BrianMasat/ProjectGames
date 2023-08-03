@@ -1,6 +1,5 @@
 from fastapi import FastAPI, Response
 from df import obtener_generos, obtener_juegos, obtener_specs, obtener_early_access, obtener_sentiment, obtener_metascore
-import requests
 
 app = FastAPI(title="Steam Games API",
               description="Proyecto individual 1",
