@@ -1,6 +1,6 @@
 [![henrylogo.png](https://i.postimg.cc/JzjbH2sC/henrylogo.png)](https://postimg.cc/hXPJHM82)
 <h1 style="color:red"><center> Machine Learning Operations Engineer(MLOps)</center></h1>
-<h2 style="color:red"><center> Proyecto Individual N°1</center></h2>
+<h2 style="color:red"><center> Proyecto Individual N°1 (Brian Emiliano Masat)</center></h2>
 
 [![mlops.png](https://i.postimg.cc/4N66m07k/mlops.png)](https://postimg.cc/jLjw1Z4Z)
 
@@ -26,8 +26,8 @@ En este desafiante proyecto, aprenderemos a afrontar situaciones reales en el mu
 
  ■ Transformaciones en las bases de datos: [Link al Notebook](https://github.com/BrianMasat/ProjectGames/blob/main/EDA_MLOps.ipynb)<br>
  ■ Fuente de datos: [Link al DataSet](https://github.com/BrianMasat/ProjectGames/blob/main/steam_games.json) <br>
- ■ Deployment: [Link al Render](https://projectgames-dataengineering.onrender.com) <br>
- ■ Video: [Link al Video]() <br>
+ ■ Deployment Render: [Link al Render](https://projectgames-dataengineering.onrender.com) <br>
+ ■ Video Youtube: [Link al Video](https://youtu.be/GtR9m0nisUI) <br>
 
 
 <h1>Requerimientos:</h1>
@@ -39,24 +39,38 @@ Para este MVP, no es necesario realizar transformaciones directas en el dataset,
 <h3>Desarrollo de la API:</h3>
 El objetivo es disponibilizar los datos de la empresa mediante el framework FastAPI. Se implementarán 6 funciones para los endpoints que serán consumidos en la API, cada una con un decorador correspondiente (@app.get('/')). Las consultas propuestas son las siguientes:
 
-<h4>■  def genero(year: str):</h4> Se ingresa un año y devuelve una lista con los 5 géneros más ofrecidos en el orden correspondiente.
+<h4>■  def genero(year: str):</h4> Se ingresa un año y devuelve una lista con los 5 géneros más ofrecidos en el orden correspondiente. <br>
+► Modelo de prueba (generos/2016)<br>
+♦ https://projectgames-dataengineering.onrender.com/generos/2016
 
-<h4>■ def juegos(year: str):</h4> Se ingresa un año y devuelve una lista con los juegos lanzados en ese año.
+<h4>■ def juegos(year: str):</h4> Se ingresa un año y devuelve una lista con los juegos lanzados en ese año.<br>
+► Modelo de prueba (juegos/2004)<br>
+♦ https://projectgames-dataengineering.onrender.com/juegos/2004
 
-<h4>■ def specs(year: str):</h4> Se ingresa un año y devuelve una lista con los 5 specs que más se repiten en el mismo en el orden correspondiente.
+<h4>■ def specs(year: str):</h4> Se ingresa un año y devuelve una lista con los 5 specs que más se repiten en el mismo en el orden correspondiente.<br>
+► Modelo de prueba (specs/2013)<br>
+♦ https://projectgames-dataengineering.onrender.com/specs/2013
 
-<h4>■ def earlyacces(year: str):</h4> Devuelve la cantidad de juegos lanzados en un año con early access.
+<h4>■ def earlyacces(year: str):</h4> Devuelve la cantidad de juegos lanzados en un año con early access.<br>
+► Modelo de prueba (early_access/2016)<br>
+♦ https://projectgames-dataengineering.onrender.com/early_access/2016
 
-<h4>■ def sentiment(year: str):</h4> Según el año de lanzamiento, devuelve una lista con la cantidad de registros que se encuentren categorizados con un análisis de sentimiento.
+<h4>■ def sentiment(year: str):</h4> Según el año de lanzamiento, devuelve una lista con la cantidad de registros que se encuentren categorizados con un análisis de sentimiento.<br>
+► Modelo de prueba (sentiment/2004) <br>
+♦ https://projectgames-dataengineering.onrender.com/sentiment/2004
 
-<h4>■ def metascore(year: str):</h4> Devuelve el Top 5 de juegos según el año con el mayor metascore.
+<h4>■ def metascore(year: str):</h4> Devuelve el Top 5 de juegos según el año con el mayor metascore.<br>
+► Modelo de prueba (metascore/2015)<br>
+♦ https://projectgames-dataengineering.onrender.com/metascore/2015
 
 <h3>Análisis Exploratorio de los Datos (EDA):</h3>
 Realizaremos un Análisis Exploratorio de los Datos (EDA) para comprender las relaciones entre las variables y detectar posibles patrones y anomalías.
 
 <h3>Modelo de Predicción:</h3>
 Desarrollaremos un modelo de predicción que tome en cuenta características como género, early access, y otras variables relevantes para predecir con precisión los precios de los juegos en Steam. La función predicción
-<h4>■ def predicción(genero, earlyaccess=True/False, (Variables que elijas))</h4> permitirá ingresar estos parámetros y obtener el precio y el RMSE (Root Mean Squared Error) como resultado.
+<h4>■ def predicción(genero, earlyaccess=True/False, (Variables que elijas))</h4> permitirá ingresar estos parámetros y obtener el precio y el RMSE (Root Mean Squared Error) como resultado.<br>
+► Modelo de prueba (prediction/0, 2016, 8, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1)<br>
+♦ https://projectgames-dataengineering.onrender.com/prediction/0, 2016, 8, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1
 
 <h3>Video de Presentación:</h3>
 Crearemos un video donde mostraremos el funcionamiento de las consultas en nuestra API, así como una explicación del modelo utilizado para las predicciones. El video, de máximo 7 minutos de duración, será una oportunidad para comunicar de manera efectiva los resultados alcanzados en el proyecto y presentar los logros obtenidos en cada una de las etapas mencionadas. <br> <br>
