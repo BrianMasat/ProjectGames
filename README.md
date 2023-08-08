@@ -1,8 +1,8 @@
-<span>https://github.com/BrianMasat/ProjectGames/blob/main/imagenes/henrylogo.png</span><span>)</span>
+[![henrylogo.png](https://i.postimg.cc/JzjbH2sC/henrylogo.png)](https://postimg.cc/hXPJHM82)
 <h1 style="color:red"><center> Machine Learning Operations Engineer(MLOps)</center></h1>
 <h2 style="color:red"><center> Proyecto Individual N°1</center></h2>
 
-<span>![</span><span>Imagen</span><span>]</span><span>(</span><span>https://github.com/BrianMasat/ProjectGames/blob/main/imagenes/mlops.png</span><span>)</span>
+[![mlops.png](https://i.postimg.cc/4N66m07k/mlops.png)](https://postimg.cc/jLjw1Z4Z)
 
 <h1>Introducción al proyecto:</h1>
 
@@ -19,7 +19,7 @@ Sin embargo, no solo se trata de la implementación técnica; también es esenci
 En este desafiante proyecto, aprenderemos a afrontar situaciones reales en el mundo de Machine Learning Operations, desde la preparación y análisis de los datos hasta la implementación de modelos de predicción en una API accesible. ¡Te invito a acompañarme en este emocionante recorrido por el mundo del análisis y predicción de precios de juegos en Steam!
 
 
-<span>![</span><span>Imagen</span><span>]</span><span>(</span><span>https://github.com/BrianMasat/ProjectGames/blob/main/imagenes/descripci%C3%B3n.png</span><span>)</span>
+[![descripci-n.png](https://i.postimg.cc/rp0ztdn0/descripci-n.png)](https://postimg.cc/Jy8RfhWM)
 
 
 <h1>Evaluación de cumplimiento de los objetivos:</h1>
@@ -63,7 +63,7 @@ Crearemos un video donde mostraremos el funcionamiento de las consultas en nuest
 
 <h1>Criterios de evaluación:</h1>
 
-<span>![</span><span>Imagen</span><span>]</span><span>(</span><span>https://github.com/BrianMasat/ProjectGames/blob/main/imagenes/MVP_MLops.png</span><span>)</span>
+[![MVP-MLops.png](https://i.postimg.cc/wvwP8vz2/MVP-MLops.png)](https://postimg.cc/zbRpTqVH)
 
  <h1>Deployment:</h1> 
  Para realizar el deploy de esta aplicación, se utilizó la plataforma Render. Render es una plataforma en la nube que facilita el despliegue y el hosting de aplicaciones web y API de forma sencilla y escalable.
