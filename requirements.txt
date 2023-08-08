@@ -3,7 +3,7 @@ anyio==3.7.1
 click==8.1.6
 colorama==0.4.6
 Command==0.1.0
-contourpy==1.1.0
+contourpy==1.0.3
 cycler==0.11.0
 exceptiongroup==1.1.2
 fastapi==0.100.1
