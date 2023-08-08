@@ -3,7 +3,7 @@ import numpy as np
 import ast
 import pickle 
 from collections import Counter
-from typing import  Dict
+from typing import  Dict, Union
 
 
 with open('xgb_model.pkl', 'rb') as file:
@@ -35,9 +35,14 @@ def obtener_generos(year: str) -> Dict[str, int]:
     year_period = pd.to_datetime(year, format='%Y').to_period('Y')
     df_filtered = df[df['release_date'].dt.to_period('Y') == year_period]
     df_filtered = df_filtered.explode('genres')
+    
+    if df_filtered.empty:
+        return "Valor no encontrado"
+    
     ventas = df_filtered['genres'].value_counts()
     top_5_generos = ventas.head(5)
     return {year: top_5_generos.to_dict()}
+
 # Ejemplo de uso:
 # print(obtener_generos('2018'))
 
@@ -46,6 +51,10 @@ def obtener_generos(year: str) -> Dict[str, int]:
 def obtener_juegos(year: str) -> Dict[str, int]:
     year_period = pd.to_datetime(year, format='%Y').to_period('Y')
     df_filtered = df[df['release_date'].dt.to_period('Y') == year_period]
+
+    if df_filtered.empty:
+        return "Valor no encontrado"
+    
     juegos_lanzados = df_filtered['app_name'].tolist()
     juegos_dict = {juego for juego in juegos_lanzados}
     return {year: juegos_dict}
@@ -57,6 +66,10 @@ def obtener_juegos(year: str) -> Dict[str, int]:
 def obtener_specs(year: str) -> Dict[str, int]:
     year_period = pd.to_datetime(year, format='%Y').to_period('Y')
     df_filtered = df[df['release_date'].dt.to_period('Y') == year_period]
+
+    if df_filtered.empty:
+        return "Valor no encontrado"
+    
     df_filtered = df_filtered.explode('specs')
     specs_counter = Counter(df_filtered['specs'])
     top_5_specs = dict(specs_counter.most_common(5))
@@ -69,6 +82,10 @@ def obtener_specs(year: str) -> Dict[str, int]:
 def obtener_early_access(year: str) -> Dict[str, int]:
     year_period = pd.to_datetime(year, format='%Y').to_period('Y')
     df_filtered = df[df['release_date'].dt.to_period('Y') == year_period]
+
+    if df_filtered.empty:
+        return "Valor no encontrado"
+    
     count_early_access = df_filtered[df_filtered['early_access'] == True].shape[0]
     return {year: count_early_access}
 # Ejemplo de uso:
@@ -79,6 +96,10 @@ def obtener_early_access(year: str) -> Dict[str, int]:
 def obtener_sentiment(year: str) -> Dict[str, int]:
     year_period = pd.to_datetime(year, format='%Y').to_period('Y')
     df_filtered = df[df['release_date'].dt.to_period('Y') == year_period]
+
+    if df_filtered.empty:
+        return "Valor no encontrado"
+    
     sentiment_counts = df_filtered['sentiment'].value_counts()
     sentiment_counts_dict = sentiment_counts.to_dict()
     if 'nan' in sentiment_counts_dict:
@@ -94,6 +115,10 @@ def obtener_metascore(year: str) -> Dict[str, int]:
     year_period = pd.to_datetime(year, format='%Y').to_period('Y')
     df_filtered = df[df["release_date"].dt.to_period('Y') == year_period]
     df_filtered = df_filtered.dropna(subset=['metascore'])
+
+    if df_filtered.empty:
+        return "Valor no encontrado"
+    
     df_sorted = df_filtered.sort_values(by='metascore', ascending=False)
     top_5_games = df_sorted.head(5)
     metascore_dict = {game['app_name']: game['metascore'] for _, game in top_5_games.iterrows()}
@@ -112,8 +137,8 @@ def price_predictor(variables: str):
     if len(integer_list) == 23:
         price_pred = loaded_model.predict(np.array(integer_list).reshape(1, -1))[0].round(2)
         RMSE = '4.23'
-        return {'price prediction': str(price_pred), 'RMSE': RMSE}
+        return {'Price Prediction': str(price_pred), 'RMSE': RMSE}
     elif len(integer_list) < 23:
-        return {'error': 'se insertaron variables de menos'}
+        return {'Error': 'Se insertaron variables de menos'}
     elif len(integer_list) > 23:
-        return {'error': 'se insertaron variables demás'}
+        return {'Error': 'Se insertaron variables demás'}
